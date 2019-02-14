@@ -1,4 +1,12 @@
 {
   "version": 2,
-  "builds": [{ "src": "api/hello/index.js", "use": "@now/node" }]
+  "name": "node-project",
+  "env": {
+  },
+  "builds": [
+    { "src": "index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.js" }
+  ]
 }
