@@ -8,12 +8,12 @@ app.use(bodyParser())
 app.use(async ctx => {
   const todoItem = await ctx.request.body.todoItem
   const todosDeleted = await deleteTodo(todoItem)
-  ctx.body = todosDeleted + `All the Todo's with the name "${todoItem}" were deleted`
+  ctx.body = todosDeleted + `All the Todo's with the status true were deleted`
 })
 
 async function deleteTodo(todoItem) {
   try {
-    const todos = await pool.query(`DELETE FROM todo where todoItem like '${todoItem}';`)
+    const todos = await pool.query(`DELETE FROM todo where todoStatus = true;`)
     return todos
   } catch (error) {
     console.log(error)

@@ -14,7 +14,7 @@ app.use(async ctx => {
 
 async function updateTodo(todoItem, todoStatus) {
   try {
-    const updatedTodo = await pool.query(`update todo set todoItem = '${todoItem}', todoStatus = ${todoStatus} where todoItem like "New Todo Item";`)
+    const updatedTodo = await pool.query(`update todo set todoStatus = ${todoStatus} where todoItem like '${todoItem}';`)
     return updatedTodo
   } catch (error) {
     console.log(error)

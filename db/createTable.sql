@@ -5,5 +5,6 @@ CREATE TABLE todo (
   todoStatus  BOOLEAN NOT NULL,
   todoDateBy  DATE NOT NULL,
 
+  UNIQUE KEY unique_todoItem (todoItem),
   PRIMARY KEY     (todoID)
 );
