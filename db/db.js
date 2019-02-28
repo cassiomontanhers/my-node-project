@@ -5,7 +5,7 @@ const config = {
     port: "3306",
     user: "masterUser",
     password: "masterPass",
-    database: "movies",
+    database: "todo",
     connectionLimit: 100,
 };
 
